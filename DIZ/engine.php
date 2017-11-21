@@ -1,12 +1,16 @@
 <?php
-$folder_depth=0;$PROTOCOL="http://";$DOMAIN="barta.lap";$LINK0=$PROTOCOL.$DOMAIN;$JS=$LINK0."/Diz/THEME/JS/";$IMJ=$LINK0."/Diz/THEME/IMJ/";$CSS=$LINK0."/Diz/THEME/CSS/";
+include "DIZ/DirectAccess-preventer.php";
+
+//$folder_depth=0;$PROTOCOL="http://";$DOMAIN="barta.lap";$LINK0=$PROTOCOL.$DOMAIN;$JS=$LINK0."/Diz/THEME/JS/";$IMJ=$LINK0."/Diz/THEME/IMJ/";$CSS=$LINK0."/Diz/THEME/CSS/";
 include('CONN.php');
 include('FN.php');
-if(isset($_POST['Diz_FORM']) && $_POST['Diz_FORM']!=""){
+if(isset($_POST['FORM_NAME']) && $_POST['FORM_NAME']!=""){
 // Some security implementation needed
-include("Diz/POST_ACTION/".$_POST['Diz_FORM'].".php");
-
+file_exists("CONTENT/POST_ACTION/".$_POST['FORM_NAME'].".php") include("CONTENT/POST_ACTION/".$_POST['FORM_NAME'].".php");
+else $FormReply->info = "Form handler not found !";
 }
+foreach (glob("DIZ/FN/*.php") as $filename) include $filename;
+
 //echo getcwd();echo APP_PATH;
 /*$sql = "SELECT * FROM `page` WHERE `Lang`='EN' ORDER BY `ID`";//"SELECT * FROM `page` ORDER BY `page`.`ID` ASC";
 

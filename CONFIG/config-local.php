@@ -1,2 +1,4 @@
-some
-  test
+<?php include "DIZ/DirectAccess-preventer.php";
+
+
+ ?>
