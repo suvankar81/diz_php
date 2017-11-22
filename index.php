@@ -6,7 +6,7 @@ define("HTTP_HOST", "");//$_SERVER['HTTP_HOST'] == 'localhost:8080';$_SERVER['SE
 define("SERVER_NAME","");
 define("DOMAIN_NAME","NA");
 $url = explode('/', $_SERVER['REQUEST_URI']);define("F_D",0);
-include('DIZ/ENGINE.php');
+include('DIZ/engine.php');
 
 
  ?>
