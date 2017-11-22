@@ -1,5 +1,5 @@
 <?php
-include "DIZ/DirectAccess-preventer.php";
+include "../DIZ/DirectAccess-preventer.php";
 $host="localhost";
 $user="";
 $pass = "";
