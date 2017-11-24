@@ -1,0 +1,4 @@
+<?php
+include("Diz/THEME/BN_HOME.php");
+
+?>
